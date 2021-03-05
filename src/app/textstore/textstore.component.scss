@@ -1,0 +1,34 @@
+nav{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  a{
+    padding: 10px 20px;
+    background-color: #c6c6c6;
+
+    &:hover{
+      background-color: darken(#c6c6c6, 5%);
+    }
+  }
+}
+
+table{
+  border-spacing: 0;
+  th{
+    background: #000;
+    color: #c6c6c6;
+    //margin: 0;
+    //padding: 0;
+    //border: 1px solid #c6c6c6;
+  }
+
+  td{
+    background-color: darken(#ececec, 10%);
+  }
+}
+
+.oneC{
+  td{
+    background-color: #ececec;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="translate">
+  <div>
+    <form class="translate-form" (ngSubmit)="send()">
+      <div class="translate-form-fields">
+
+        <div class="translate-form-fields-text">
+          <label>
+            <textarea name="textIn" placeholder="Enter text to be translated" minlength="5" rows="10" cols="50" required [(ngModel)]="googleObj.q"></textarea>
+          </label>
+          <div class="language">
+            <label>From Language:</label>
+            <label class="language-select">
+              <select [(ngModel)]="selectedLangIn" id="languagesFrom" name="languages">
+                <option *ngFor="let lang of languages" value={{lang.value}}>{{lang.text}}</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="translate-form-fields-text">
+          <label>
+            <textarea name="textOut" placeholder="Translated text will appear here..." minlength="5" rows="10" cols="50">{{result}}</textarea>
+          </label>
+          <div class="language">
+            <label>To Language:</label>
+            <label class="language-select">
+              <select [(ngModel)]="selectedLangOut"  id="languagesTo" name="languages">
+                <option *ngFor="let lang of languages" value={{lang.value}}>{{lang.text}}</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="button">
+        <button type="button" (click)="googleObj.q = ''; result = ''">Erase</button>
+        <button type="submit" id="btnSubmit" [disabled]="googleObj.q === ''" >Translate</button>
+        <button type="button" (click)="save()">Save</button>
+      </div>
+    </form>
+  </div>
+  <nav>
+    <a routerLink="/stored">Link to stored text</a>
+  </nav>
+</div>
