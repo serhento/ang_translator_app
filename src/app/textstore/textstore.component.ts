@@ -23,6 +23,6 @@ export class TextstoreComponent implements OnInit {
     }
     values.map(item=>{
       this.arr.push(JSON.parse(item))
-    })
+    });
   }
 }

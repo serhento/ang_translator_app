@@ -1,7 +1,6 @@
 <nav>
-  <a routerLink="">Link to main page</a>
+  <a routerLink="/translate">Translate text</a>
 </nav>
-
 <table>
   <tr *ngIf="arr.length>0">
     <th>№</th>
@@ -16,5 +15,8 @@
     <td>{{item.source}}</td>
     <td>{{item.langOut}}</td>
     <td>{{item.target}}</td>
+    <td>
+      <a [routerLink]="['/item', idx+1, item]" [queryParams]="{ page: 99 }">View</a>
+    </td>
   </tr>
 </table>

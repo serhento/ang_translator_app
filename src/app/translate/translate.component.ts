@@ -59,5 +59,5 @@ export class TranslateComponent implements OnInit {
     let data = {"langIn": this.googleObj.source, "langOut": this.googleObj.target, "source": this.googleObj.q, "target": this.result};
     let x = Math.round(Math.random()*100);
     localStorage.setItem(String(x), JSON.stringify(data))
-  }
+  };
 }

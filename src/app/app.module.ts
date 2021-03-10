@@ -6,23 +6,28 @@ import { AppComponent } from './app.component';
 import { TextstoreComponent } from './textstore/textstore.component';
 import { TranslateComponent } from './translate/translate.component';
 import {Routes, RouterModule} from '@angular/router';
+import { TranslateItemComponent } from './translate-item/translate-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
-  {path: '', component: TranslateComponent},
-  {path: 'stored', component: TextstoreComponent}
+  {path: '', component: TextstoreComponent},
+  {path: 'item/:id', component: TranslateItemComponent},
+  {path: 'translate', component: TranslateComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     TextstoreComponent,
-    TranslateComponent
+    TranslateComponent,
+    TranslateItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
