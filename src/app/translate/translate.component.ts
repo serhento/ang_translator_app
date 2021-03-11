@@ -11,6 +11,8 @@ export class TranslateComponent implements OnInit {
 
   public googleObj: GoogleObj = new GoogleObj();
   public result = '';
+  isTranslated = false;
+  isShow = false;
   languages = [];
   selectedLangIn: String = '';
   selectedLangOut: String = '';
@@ -46,6 +48,7 @@ export class TranslateComponent implements OnInit {
       (res: any) => {
         this.result = res.data.translations[0].translatedText;
         console.log(this.result);
+        this.isTranslated = true;
         return this.result;
 
       },
@@ -59,5 +62,9 @@ export class TranslateComponent implements OnInit {
     let data = {"langIn": this.googleObj.source, "langOut": this.googleObj.target, "source": this.googleObj.q, "target": this.result};
     let x = Math.round(Math.random()*100);
     localStorage.setItem(String(x), JSON.stringify(data))
+    this.isShow = true;
+    setInterval(()=>{
+      this.isShow = false;
+    }, 3000)
   };
 }
