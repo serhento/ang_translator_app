@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-translate-item',
   templateUrl: './translate-item.component.html',
-  styleUrls: ['./translate-item.component.css']
+  styleUrls: ['./translate-item.component.scss']
 })
 export class TranslateItemComponent implements OnInit {
 

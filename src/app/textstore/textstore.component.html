@@ -1,22 +1,30 @@
-<nav>
-  <a routerLink="/translate">Translate text</a>
-</nav>
-<table>
-  <tr *ngIf="arr.length>0">
-    <th>№</th>
-    <th>Lang</th>
-    <th>Text</th>
-    <th>Lang</th>
-    <th>Text</th>
-  </tr>
-  <tr *ngFor="let item of arr; let idx = index" [class.oneC]="idx%2===0">
-    <td>{{idx+1}}</td>
-    <td>{{item.langIn}}</td>
-    <td>{{item.source}}</td>
-    <td>{{item.langOut}}</td>
-    <td>{{item.target}}</td>
-    <td>
-      <a [routerLink]="['/item', idx+1, item]" [queryParams]="{ page: 99 }">View</a>
-    </td>
-  </tr>
-</table>
+<div class="textstore container">
+  <div class="alert alert-secondary link" role="alert">
+    <a routerLink="/translate" class="alert-link">Translate text</a>
+  </div>
+
+  <table class="p-2 table-bordered">
+    <tr *ngIf="arr.length>0" class="table-secondary">
+      <th class="p-2 text-center">№</th>
+      <th class="p-2 text-center">Lang</th>
+      <th class="p-2 text-center">Text</th>
+      <th class="p-2 text-center">Lang</th>
+      <th class="p-2 text-center">Text</th>
+      <th class="p-2 text-center">View</th>
+    </tr>
+    <tr class="table-bordered" *ngFor="let item of arr; let idx = index" [class.oneC]="idx%2===0">
+      <td class="p-2 text-center">{{idx+1}}</td>
+      <td class="p-2 text-center">{{item.langIn}}</td>
+      <td class="p-2">
+        <p class="textstore-text">{{item.source}}</p>
+      </td>
+      <td class="p-2 text-center">{{item.langOut}}</td>
+      <td class="p-2">
+        <p class="textstore-text">{{item.target}}</p>
+      </td>
+      <td class="p-2">
+        <a class="text-dark" [routerLink]="['/item', idx+1, item]" [queryParams]="{ page: 99 }">View</a>
+      </td>
+    </tr>
+  </table>
+</div>

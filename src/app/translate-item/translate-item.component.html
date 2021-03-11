@@ -1,4 +1,20 @@
-<p>{{langIn}}</p>
-<p>{{textIn}}</p>
-<p>{{langOut}}</p>
-<p>{{textOut}}</p>
+<div class="item">
+  <div class="d-flex justify-content-between">
+    <div class="alert alert-secondary link" role="alert">
+      <a routerLink="" class="alert-link">Main page</a>
+    </div>
+    <div class="alert alert-secondary link" role="alert">
+      <a routerLink="/translate" class="alert-link">Translate text</a>
+    </div>
+  </div>
+  <table class="p-2 table-bordered">
+    <tr class="table-bordered table-secondary">
+      <td class="p-2 text-center">{{langIn}}</td>
+      <td class="p-2 text-center">{{langOut}}</td>
+    </tr>
+    <tr class="table-bordered">
+      <td class="p-2">{{textIn}}</td>
+      <td class="p-2">{{textOut}}</td>
+    </tr>
+  </table>
+</div>
