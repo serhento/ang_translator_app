@@ -5,12 +5,12 @@ import { HttpClient } from '@angular/common/http';
 export class GoogleService {
   constructor(private _http: HttpClient) {}
 
-  translate(obj: GoogleObj) {
-    return this._http.post(url, obj);
+  translate(obj: GoogleObj, key: string) {
+    return this._http.post(url + key, obj);
   }
 }
 
-const url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyCOCNLbhXKtxwTkfdZ2bOzH3sF0vU3Ffpw';
+const url = 'https://translation.googleapis.com/language/translate/v2?key=';
 
 export class GoogleObj{
 

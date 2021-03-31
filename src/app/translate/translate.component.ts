@@ -11,6 +11,7 @@ export class TranslateComponent implements OnInit {
 
   public googleObj: GoogleObj = new GoogleObj();
   public result = '';
+  public key: string;
   isTranslated = false;
   isShow = false;
   languages = [];
@@ -44,7 +45,7 @@ export class TranslateComponent implements OnInit {
   send() {
     this.googleObj.source = String(this.selectedLangIn);
     this.googleObj.target = String(this.selectedLangOut);
-    this._google.translate(this.googleObj).subscribe(
+    this._google.translate(this.googleObj, this.key).subscribe(
       (res: any) => {
         this.result = res.data.translations[0].translatedText;
         console.log(this.result);
